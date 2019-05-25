@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true" scan="true">
+	
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="ROLLING"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${catalina.home}\logs\testapp-rf.txt</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>${catalina.home}\logs\testapp-rf-%d{yyyy-MM-dd}.%i.zip</fileNamePattern>
+			<!-- each ROLLING should be at most 20MB, keep 60 days worth of history, 
+				but at most 10GB -->
+			<maxFileSize>20MB</maxFileSize>
+			<maxHistory>30</maxHistory>
+			<totalSizeCap>10GB</totalSizeCap>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="ROLLING_JDBC"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${catalina.home}\logs\testapp-jdbc-rf.txt</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>${catalina.home}\logs\testapp-jdbc-rf-%d{yyyy-MM-dd}.%i.zip</fileNamePattern>
+			<!-- each ROLLING should be at most 20MB, keep 60 days worth of history, 
+				but at most 10GB -->
+			<maxFileSize>20MB</maxFileSize>
+			<maxHistory>30</maxHistory>
+			<totalSizeCap>10GB</totalSizeCap>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="ROLLING_INTRO"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${catalina.home}\logs\testapp-intro-rf.txt</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>${catalina.home}\logs\testapp-intro-rf-%d{yyyy-MM-dd}.%i.zip</fileNamePattern>
+			<!-- each ROLLING should be at most 20MB, keep 60 days worth of history, 
+				but at most 10GB -->
+			<maxFileSize>20MB</maxFileSize>
+			<maxHistory>30</maxHistory>
+			<totalSizeCap>10GB</totalSizeCap>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+	
+	<appender name="ROLLING_EXTRACTION"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${catalina.home}\logs\testapp-extraction-rf.txt</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>${catalina.home}\logs\testapp-extraction-rf-%d{yyyy-MM-dd}.%i.zip</fileNamePattern>
+			<!-- each ROLLING should be at most 20MB, keep 60 days worth of history, 
+				but at most 10GB -->
+			<maxFileSize>20MB</maxFileSize>
+			<maxHistory>30</maxHistory>
+			<totalSizeCap>10GB</totalSizeCap>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+	
+	<appender name="ROLLING_MIX"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${catalina.home}\logs\testapp-mix-rf.txt</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>${catalina.home}\logs\testapp-mix-rf-%d{yyyy-MM-dd}.%i.zip</fileNamePattern>
+			<!-- each ROLLING should be at most 20MB, keep 60 days worth of history, 
+				but at most 10GB -->
+			<maxFileSize>20MB</maxFileSize>
+			<maxHistory>30</maxHistory>
+			<totalSizeCap>10GB</totalSizeCap>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+	
+	<appender name="ROLLING_WHSOUTPUT"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${catalina.home}\logs\testapp-whsoutput-rf.txt</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>${catalina.home}\logs\testapp-whsoutput-rf-%d{yyyy-MM-dd}.%i.zip</fileNamePattern>
+			<!-- each ROLLING should be at most 20MB, keep 60 days worth of history, 
+				but at most 10GB -->
+			<maxFileSize>20MB</maxFileSize>
+			<maxHistory>30</maxHistory>
+			<totalSizeCap>10GB</totalSizeCap>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+	
+	
+	<appender name="ROLLING_STAL"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${catalina.home}\logs\testapp-stal-rf.txt</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>${catalina.home}\logs\testapp-stal-rf-%d{yyyy-MM-dd}.%i.zip</fileNamePattern>
+			<!-- each ROLLING should be at most 20MB, keep 60 days worth of history, 
+				but at most 10GB -->
+			<maxFileSize>20MB</maxFileSize>
+			<maxHistory>30</maxHistory>
+			<totalSizeCap>10GB</totalSizeCap>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+	
+	
+	<appender name="ROLLING_MOON"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${catalina.home}\logs\testapp-MOON-rf.txt</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>${catalina.home}\logs\testapp-MOON-rf-%d{yyyy-MM-dd}.%i.zip</fileNamePattern>
+			<!-- each ROLLING should be at most 20MB, keep 60 days worth of history, 
+				but at most 10GB -->
+			<maxFileSize>20MB</maxFileSize>
+			<maxHistory>30</maxHistory>
+			<totalSizeCap>10GB</totalSizeCap>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>	
+	
+	<appender name="ROLLING_trick"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${catalina.home}\logs\testapp-trick-rf.txt</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>${catalina.home}\logs\testapp-trick-rf-%d{yyyy-MM-dd}.%i.zip</fileNamePattern>
+			<!-- each ROLLING should be at most 20MB, keep 60 days worth of history, 
+				but at most 10GB -->
+			<maxFileSize>20MB</maxFileSize>
+			<maxHistory>30</maxHistory>
+			<totalSizeCap>10GB</totalSizeCap>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>	
+	
+	<appender name="ROLLING_ENGINE_EXCEPTIONS"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${catalina.home}\logs\testapp-engine-exceptions-rf.txt</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>${catalina.home}\logs\testapp-engine-exceptions-rf-%d{yyyy-MM-dd}.%i.zip</fileNamePattern>
+			<!-- each ROLLING should be at most 20MB, keep 60 days worth of history, 
+				but at most 10GB -->
+			<maxFileSize>20MB</maxFileSize>
+			<maxHistory>30</maxHistory>
+			<totalSizeCap>10GB</totalSizeCap>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+	
+	<springProfile name="!prd">
+		<logger name="org.springframework" level="WARN">
+
+		</logger>
+		<logger name="org.springframework.jdbc.core.JdbcTemplate" level="DEBUG" additivity="false">
+			<appender-ref ref="ROLLING_JDBC" />
+		</logger>
+		<logger name="mx.org.prodctrl.testapp" level="DEBUG">
+
+		</logger>
+		<logger name="mx.org.prodctrl.testapp.backend.service.entry" level="DEBUG">
+			<appender-ref ref="ROLLING_INTRO" />
+		</logger>
+		<logger name="mx.org.prodctrl.testapp.backend.service.extraction" level="DEBUG">
+			<appender-ref ref="ROLLING_EXTRACTION" />
+		</logger>
+		<logger name="mx.org.prodctrl.testapp.backend.service.mix" level="DEBUG">
+			<appender-ref ref="ROLLING_MIX" />
+		</logger>
+		<logger name="mx.org.prodctrl.testapp.backend.service.whsoutput" level="DEBUG">
+			<appender-ref ref="ROLLING_WHSOUTPUT" />
+		</logger>
+		<logger name="mx.org.prodctrl.testapp.backend.service.stal" level="DEBUG" additivity="false">
+			<appender-ref ref="ROLLING_STAL" />
+		</logger>
+		<logger name="mx.org.prodctrl.testapp.backend.service.MOON" level="DEBUG" additivity="false">
+			<appender-ref ref="ROLLING_MOON" />
+		</logger>	
+		<logger name="mx.org.prodctrl.testapp.backend.service.trick" level="DEBUG" additivity="false">
+			<appender-ref ref="ROLLING_trick" />
+		</logger>
+		<logger name="mx.org.prodctrl.testapp.exceptions" level="DEBUG">
+			<appender-ref ref="ROLLING_ENGINE_EXCEPTIONS" />
+		</logger>							
+		<logger name="mx.org.prodctrl.testapp.utils" level="DEBUG">
+
+		</logger>
+		
+		<logger name="mx.org.prodctrl.testapp.backend.persistence.repository.mapper" level="OFF">
+
+		</logger>
+		
+	</springProfile>
+	
+	<springProfile name="prd">
+		<logger name="org.springframework.jndi" level="WARN" additivity="false">
+			<appender-ref ref="ROLLING" />
+		</logger>
+		<logger name="org.springframework.jdbc.core.JdbcTemplate" level="DEBUG" additivity="false">
+			<appender-ref ref="ROLLING_JDBC" />
+		</logger>
+		<logger name="mx.org.prodctrl.testapp" level="DEBUG"  additivity="false">
+			<appender-ref ref="ROLLING" />
+		</logger>
+		<logger name="mx.org.prodctrl.testapp.backend.service.entry" level="DEBUG">
+			<appender-ref ref="ROLLING_INTRO" />
+		</logger>
+		<logger name="mx.org.prodctrl.testapp.backend.service.extraction" level="DEBUG">
+			<appender-ref ref="ROLLING_EXTRACTION" />
+		</logger>
+		<logger name="mx.org.prodctrl.testapp.backend.service.mix" level="DEBUG">
+			<appender-ref ref="ROLLING_MIX" />
+		</logger>
+		<logger name="mx.org.prodctrl.testapp.backend.service.whsoutput" level="DEBUG">
+			<appender-ref ref="ROLLING_WHSOUTPUT" />
+		</logger>
+		<logger name="mx.org.prodctrl.testapp.backend.service.stal" level="DEBUG" additivity="false">
+			<appender-ref ref="ROLLING_STAL" />
+		</logger>
+		<logger name="mx.org.prodctrl.testapp.backend.service.MOON" level="DEBUG" additivity="false">
+			<appender-ref ref="ROLLING_MOON" />
+		</logger>	
+		<logger name="mx.org.prodctrl.testapp.backend.service.trick" level="DEBUG" additivity="false">
+			<appender-ref ref="ROLLING_trick" />
+		</logger>
+		<logger name="mx.org.prodctrl.testapp.exceptions" level="DEBUG">
+			<appender-ref ref="ROLLING_ENGINE_EXCEPTIONS" />
+		</logger>			
+		<logger name="mx.org.prodctrl.testapp.utils" level="WARN" additivity="false">
+			<appender-ref ref="ROLLING" />
+		</logger>
+		<logger name="mx.org.prodctrl.testapp.backend.persistence.repository.mapper" level="OFF">
+
+		</logger>
+	</springProfile>
+		
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="ROLLING" />
+	</root>
+</configuration>
